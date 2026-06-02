@@ -1,0 +1,130 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="page-content-wrapper">
+
+        <div class="page-content-wrapper">
+
+            <!-- Contact Banner -->
+            <div class="container">
+                <div class="cta-text p-4 p-lg-5"
+                    style="background: linear-gradient(135deg, #ff6b81, #ffb199);
+            border-radius:10px; position:relative; overflow:hidden;">
+
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="mb-3 text-white">
+                                Contact Wedding Eventwala
+                            </h5>
+
+                            <p class="text-white mb-0">
+                                Have questions about wedding planning or services?
+                                Connect with us for
+                                <span class="fw-bold">
+                                    bookings, support & wedding inquiries
+                                </span>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <img src="assets/img/bg-img/make-up.png" alt=""
+                        style="position:absolute; right:10px; bottom:0; max-height:140px;">
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="container mt-3">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+
+                        <h5 class="mb-2">Contact Us</h5>
+
+                        <p class="text-muted mb-4">
+                            Write to us and our team will respond as soon as possible.
+                        </p>
+
+                        <div class="contact-form">
+                            <form action="#" method="">
+
+                                <input class="form-control border mb-3" type="text" placeholder="Your Name">
+
+                                <input class="form-control border mb-3" type="email" placeholder="Enter Email">
+
+                                <select class="form-control border mb-3" name="topic">
+                                    <option value="">Select Inquiry Type</option>
+                                    <option value="">Wedding Booking</option>
+                                    <option value="">Vendor Support</option>
+                                    <option value="">Career Inquiry</option>
+                                    <option value="">General Help</option>
+                                </select>
+
+                                <input class="form-control border mb-3" type="text"
+                                    placeholder="Website / Reference URL (Optional)">
+
+                                <textarea class="form-control border mb-3" cols="30" rows="6" placeholder="Write your message..."></textarea>
+
+                                <button class="btn btn-primary btn-lg w-100">
+                                    Send Message
+                                    <i class="ti ti-arrow-right"></i>
+                                </button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pb-3"></div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="container pb-3">
+                <div class="section-heading d-flex align-items-center justify-content-between">
+                    <h6>Wedding Gallery</h6>
+                </div>
+
+                <div class="collection-slide swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/17.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/19.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/21.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/22.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/23.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card collection-card">
+                                <img src="assets/img/product/24.jpg" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endsection
