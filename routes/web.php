@@ -26,8 +26,8 @@ Route::view('theme-entry', 'frontend.menu.theme-entry')->name('theme-entry');
 Route::view('venue', 'frontend.menu.venue')->name('venue');
 Route::view('wedding', 'frontend.menu.wedding')->name('wedding');
 
-Route::get('{url}', [FrontendController::class, 'servicePage'])
-    ->name('service.page');
+// Route::get('{url}', [FrontendController::class, 'servicePage'])
+//     ->name('service.page');
 
 // service page end
 
