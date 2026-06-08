@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
-    <meta name="description" content="Suha - Multipurpose E-commerce Mobile HTML Template">
+    <meta name="description" content="Wedding EventWala">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#625AFA">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <title>Suha - Multipurpose E-commerce Mobile HTML Template</title>
+    <title>Wedding EventWala</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&amp;display=swap"
         rel="stylesheet">
 
-    <link rel="icon" href="assets/img/icons/icon-72x72.png">
+    <link rel="icon" href="assets/img/logo1.png">
 
     <link rel="apple-touch-icon" href="assets/img/icons/icon-96x96.png">
     <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/icon-152x152.png">
@@ -81,10 +81,6 @@
             <!-- Sidenav Profile-->
             <div class="sidenav-profile">
                 <div class=""><img src="assets/img/logo1.png" alt=""></div>
-                {{-- <div class="user-info">
-                    <h5 class="user-name mb-1 text-white">Suha Sarah</h5>
-                    <p class="available-balance text-white">Balance $<span class="counter">99.29</span></p>
-                </div> --}}
             </div>
 
             @php
@@ -124,7 +120,7 @@
                         <ul>
                             @foreach ($category->services as $service)
                                 <li>
-                                    <a href="{{ $service->url ?? '#' }}">
+                                    <a href="{{ route('service.page', $service->url) }}">
                                         {{ $service->name }}
                                     </a>
                                 </li>
@@ -197,6 +193,8 @@
     <script src="{{ asset('assets/js/no-internet.js') }}"></script>
     <script src="{{ asset('assets/js/active.js') }}"></script>
     <script src="{{ asset('assets/js/pwa.js') }}"></script>
+
+
 </body>
 
 </html>

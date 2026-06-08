@@ -26,18 +26,19 @@
                         </div>
                     @endif
 
-                    <img class="big-logo" src="assets/img/core-img/logo-white.png" alt="">
+                    <img class="big-logo" src="assets/img/logo1.png" width="40%" alt="logo">
 
                     <div class="register-form mt-5">
                         <form action={{ route('login') }} method="POST">
                             <div class="form-group text-start mb-4"><span>Username</span>
                                 <label for="username"><i class="ti ti-user"></i></label>
-                                <input type="email" class="form-control" name="email" placeholder="Enter your email">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your email"
+                                    required>
                             </div>
                             <div class="form-group text-start mb-4"><span>Password</span>
                                 <label for="password"><i class="ti ti-key"></i></label>
                                 <input type="password" class="form-control" name="password"
-                                    placeholder="Enter your password">
+                                    placeholder="Enter your password" required>
                             </div>
                             <button class="btn btn-warning btn-lg w-100" type="submit">Log In<i
                                     class="ti ti-arrow-right"></i></button>

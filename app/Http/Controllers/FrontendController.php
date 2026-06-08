@@ -28,68 +28,35 @@ class FrontendController extends Controller
         return view('frontend.index', compact('categories'));
     }
 
-    public function servicePage($url)
+    protected function calculateDistance($lat1, $lon1, $lat2, $lon2)
     {
-        $service = Service::with([
-            'galleries' => function ($query) {
-                $query->where('is_hidden', false)->orderBy('position_img');
-            },
-            'category'
-        ])
-            ->where('url', $url)
+        $earthRadius = 6371000; // meters
+
+        $lat1 = (float)$lat1;
+        $lon1 = (float)$lon1;
+        $lat2 = (float)$lat2;
+        $lon2 = (float)$lon2;
+
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLon = deg2rad($lon2 - $lon1);
+
+        $a = sin($dLat / 2) * sin($dLat / 2) +
+            cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+            sin($dLon / 2) * sin($dLon / 2);
+
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+
+        return $earthRadius * $c;
+    }
+
+
+    public function servicePage($page)
+    {
+        $service = Service::with('galleries')
+            ->where('name', ucwords(str_replace('-', ' ', $page)))
+            ->orWhere('url', $page)
             ->firstOrFail();
 
         return view('frontend.service-detail', compact('service'));
     }
-
-    // public function index()
-    // {
-    //     $locationId = session('location_id');
-
-    //     $hasLocationServices = false;
-
-    //     if ($locationId) {
-    //         $hasLocationServices = LocationCategoryService::where(
-    //             'location_id',
-    //             $locationId
-    //         )->exists();
-    //     }
-
-    //     $categories = Category::with([
-    //         'services' => function ($query) use (
-    //             $locationId,
-    //             $hasLocationServices
-    //         ) {
-
-    //             $query->where('show_on_homepage', 1);
-
-    //             if ($locationId && $hasLocationServices) {
-
-    //                 $query->whereIn('services.id', function ($sub) use ($locationId) {
-
-    //                     $sub->select('service_id')
-    //                         ->from('location_category_services')
-    //                         ->where('location_id', $locationId);
-    //                 });
-
-    //                 $query->whereNotIn('services.id', function ($sub) use ($locationId) {
-
-    //                     $sub->select('service_id')
-    //                         ->from('location_category_services')
-    //                         ->where('location_id', $locationId)
-    //                         ->where('is_hidden', 1);
-    //                 });
-    //             }
-
-    //             $query->orderBy('position');
-    //         }
-    //     ])
-    //         ->orderBy('position')
-    //         ->get()
-    //         ->filter(function ($category) {
-    //             return $category->services->isNotEmpty();
-    //         });
-
-    //     return view('frontend.index', compact('categories'));
-    // }
 }

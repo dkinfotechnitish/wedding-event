@@ -14,20 +14,22 @@ Route::view('faq', 'frontend.support.faq')->name('faq');
 Route::view('career', 'frontend.support.career')->name('career');
 
 // menu pages
-Route::view('anniversary', 'frontend.menu.anniversary')->name('anniversary');
-Route::view('birthday', 'frontend.menu.birthday')->name('birthday');
-Route::view('catering', 'frontend.menu.catering')->name('catering');
-Route::view('decorator', 'frontend.menu.decorator')->name('decorator');
-Route::view('engagement', 'frontend.menu.engagement')->name('engagement');
-Route::view('honey-moon', 'frontend.menu.honeymoon')->name('honeymoon');
-Route::view('photography', 'frontend.menu.photography')->name('photography');
-Route::view('reception', 'frontend.menu.reception')->name('reception');
-Route::view('theme-entry', 'frontend.menu.theme-entry')->name('theme-entry');
-Route::view('venue', 'frontend.menu.venue')->name('venue');
-Route::view('wedding', 'frontend.menu.wedding')->name('wedding');
+Route::prefix('menu')->name('menu.')->group(function () {
+    Route::view('anniversary', 'frontend.menu.anniversary')->name('anniversary');
+    Route::view('birthday', 'frontend.menu.birthday')->name('birthday');
+    Route::view('catering', 'frontend.menu.catering')->name('catering');
+    Route::view('decorator', 'frontend.menu.decorator')->name('decorator');
+    Route::view('engagement', 'frontend.menu.engagement')->name('engagement');
+    Route::view('honey-moon', 'frontend.menu.honeymoon')->name('honeymoon');
+    Route::view('photography', 'frontend.menu.photography')->name('photography');
+    Route::view('reception', 'frontend.menu.reception')->name('reception');
+    Route::view('theme-entry', 'frontend.menu.theme-entry')->name('theme-entry');
+    Route::view('venue', 'frontend.menu.venue')->name('venue');
+    Route::view('wedding', 'frontend.menu.wedding')->name('wedding');
+});
 
-// Route::get('{url}', [FrontendController::class, 'servicePage'])
-//     ->name('service.page');
+Route::get('/service-details/{url}', [FrontendController::class, 'servicePage'])
+    ->name('service.page');
 
 // service page end
 

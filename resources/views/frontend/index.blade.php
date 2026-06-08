@@ -50,10 +50,6 @@
                                         data-duration="1000ms">
                                         Elegant décor, planning & unforgettable moments
                                     </p>
-                                    <a class="btn btn-primary" href="#booking" data-animation="fadeInUp" data-delay="800ms"
-                                        data-duration="1000ms">
-                                        Book Now
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -71,10 +67,6 @@
                                         data-duration="1000ms">
                                         Beautiful wedding setups for your special day
                                     </p>
-                                    <a class="btn btn-primary" href="#services" data-animation="fadeInUp" data-delay="500ms"
-                                        data-duration="1000ms">
-                                        Explore Services
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -92,10 +84,6 @@
                                         data-duration="1000ms">
                                         Stylish stage, floral décor & lighting arrangements
                                     </p>
-                                    <a class="btn btn-primary" href="#contact" data-animation="fadeInUp" data-delay="800ms"
-                                        data-duration="1000ms">
-                                        Contact Us
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -113,10 +101,6 @@
                                         data-duration="1000ms">
                                         Tasteful menus for every wedding celebration
                                     </p>
-                                    <a class="btn btn-primary" href="#services" data-animation="fadeInUp" data-delay="800ms"
-                                        data-duration="1000ms">
-                                        View Services
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -134,10 +118,6 @@
                                         data-duration="1000ms">
                                         Professional wedding photography & videography
                                     </p>
-                                    <a class="btn btn-primary" href="#gallery" data-animation="fadeInUp" data-delay="800ms"
-                                        data-duration="1000ms">
-                                        View Gallery
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -155,10 +135,6 @@
                                         data-duration="1000ms">
                                         Elegant arrangements for grand celebrations
                                     </p>
-                                    <a class="btn btn-primary" href="#contact" data-animation="fadeInUp"
-                                        data-delay="800ms" data-duration="1000ms">
-                                        Get Quote
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -176,10 +152,6 @@
                                         data-duration="1000ms">
                                         Traditional celebrations with creative decoration
                                     </p>
-                                    <a class="btn btn-primary" href="#booking" data-animation="fadeInUp"
-                                        data-delay="800ms" data-duration="1000ms">
-                                        Book Event
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +184,6 @@
             </div>
         </div>
 
-        <!-- Product Menu -->
         <div class="product-catagories-wrapper py-3">
             <div class="container">
                 <div class="row g-2">
@@ -221,7 +192,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('engagement') }}">
+                                <a href="{{ route('menu.engagement') }}">
                                     <i class="ti ti-heart-handshake fs-1 mb-2 text-danger"></i>
                                     <span>Engagement</span>
                                 </a>
@@ -233,7 +204,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('wedding') }}">
+                                <a href="{{ route('menu.wedding') }}">
                                     <i class="ti ti-heart fs-1 mb-2" style="color: #e83e8c;"></i>
                                     <span>Wedding</span>
                                 </a>
@@ -245,7 +216,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('reception') }}">
+                                <a href="{{ route('menu.reception') }}">
                                     <i class="ti ti-glass-full fs-1 mb-2 text-warning"></i>
                                     <span>Reception</span>
                                 </a>
@@ -257,7 +228,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('anniversary') }}">
+                                <a href="{{ route('menu.anniversary') }}">
                                     <i class="ti ti-cake fs-1 mb-2 text-success"></i>
                                     <span>Anniversary</span>
                                 </a>
@@ -269,7 +240,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('honeymoon') }}">
+                                <a href="{{ route('menu.honeymoon') }}">
                                     <i class="ti ti-plane fs-1 mb-2 text-info"></i>
                                     <span>Honeymoon</span>
                                 </a>
@@ -281,7 +252,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('birthday') }}">
+                                <a href="{{ route('menu.birthday') }}">
                                     <i class="ti ti-cake fs-1 mb-2 text-primary"></i>
                                     <span>Birthday</span>
                                 </a>
@@ -293,7 +264,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('venue') }}">
+                                <a href="{{ route('menu.venue') }}">
                                     <i class="ti ti-building-community fs-1 mb-2 text-secondary"></i>
                                     <span>Venue</span>
                                 </a>
@@ -305,7 +276,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('decorator') }}">
+                                <a href="{{ route('menu.decorator') }}">
                                     <i class="ti ti-flower fs-1 mb-2 text-success"></i>
                                     <span>Decorator</span>
                                 </a>
@@ -317,7 +288,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('catering') }}">
+                                <a href="{{ route('menu.catering') }}">
                                     <i class="ti ti-chef-hat fs-1 mb-2 text-danger"></i>
                                     <span>Catering</span>
                                 </a>
@@ -329,7 +300,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('photography') }}">
+                                <a href="{{ route('menu.photography') }}">
                                     <i class="ti ti-camera fs-1 mb-2 text-dark"></i>
                                     <span>Photography</span>
                                 </a>
@@ -341,7 +312,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('theme-entry') }}">
+                                <a href="{{ route('menu.theme-entry') }}">
                                     <i class="ti ti-sparkles fs-1 mb-2 text-warning"></i>
                                     <span>Theme Entry</span>
                                 </a>
@@ -353,7 +324,7 @@
                     <div class="col-3">
                         <div class="card catagory-card">
                             <div class="card-body px-2 text-center">
-                                <a href="{{ route('theme-entry') }}">
+                                <a href="{{ route('menu.theme-entry') }}">
                                     <i class="ti ti-star fs-1 mb-2 text-primary"></i>
                                     <span>Theme Entry</span>
                                 </a>
@@ -364,8 +335,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- product category with services --}}
 
         @php
             $gradients = [
@@ -413,45 +382,50 @@
                 <div class="featured-products-wrapper py-3 my-2">
                     <div class="container">
 
-                        <div class="section-heading d-flex align-items-center justify-content-between">
-                            <h6>{{ $category->name }}</h6>
-                        </div>
+                        <!-- Parent Card -->
+                        <div class="card shadow-sm border-0" style="background: #d6ba91;">
 
-                        <div class="row g-2">
+                            <!-- Card Header -->
+                            <div
+                                class="card-header border-0 bg-transparent d-flex align-items-center justify-content-between">
+                                <h6 class="mb-0">{{ $category->name }}</h6>
+                            </div>
 
-                            @foreach ($category->services as $service)
-                                <div class="col-4 col-md-4">
+                            <!-- Card Body -->
+                            <div class="card-body p-2">
 
-                                    @php
-                                        $routeName = strtolower(str_replace(' ', '-', $service->name));
-                                    @endphp
+                                <!-- Swiper -->
+                                <div class="featured-products-slide swiper">
+                                    <div class="swiper-wrapper">
 
-                                    <div class="card featured-product-card service-card h-100 shadow-sm border-0">
-                                        <div class="card-body text-center">
+                                        @foreach ($category->services as $service)
+                                            <div class="swiper-slide">
 
-                                            <div class="product-thumbnail-side mb-2 overflow-hidden rounded">
-                                                <a class="product-thumbnail d-block"
-                                                    href="{{ route('service.page', $service->url) }}">
+                                                <div class=" text-center">
 
-                                                    <img src="{{ asset('storage/' . $service->image) }}"
-                                                        alt="{{ $service->name }}" class="img-fluid rounded service-img"
-                                                        style="height:250px; width:100%;object-fit:cover;">
-                                                </a>
+                                                    <div class="product-thumbnail-side mb-2 overflow-hidden rounded">
+                                                        <a href="{{ route('service.page', $service->url) }}">
+                                                            <img src="{{ asset('storage/' . $service->image) }}"
+                                                                alt="{{ $service->name }}"
+                                                                class="img-fluid rounded service-img"
+                                                                style="height:250px;width:100%;object-fit:cover;">
+                                                        </a>
+                                                    </div>
+
+                                                    <a href="{{ route('service.page', $service->url) }}"
+                                                        class="d-block text-dark text-decoration-none fw-semibold">
+                                                        {{ $service->name }}
+                                                    </a>
+
+                                                </div>
+
                                             </div>
+                                        @endforeach
 
-                                            <div class="product-description">
-                                                <a href="{{ route('service.page', $service->url) }}"
-                                                    class="product-title service-title d-block text-dark text-decoration-none fw-semibold">
-                                                    {{ $service->name }}
-                                                </a>
-                                            </div>
-
-                                        </div>
                                     </div>
-
                                 </div>
-                            @endforeach
 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -459,4 +433,50 @@
         @endforeach
 
     </div>
+
+    {{-- <div style="margin-bottom: 100px;">
+
+
+        <button onclick="getLocation()">Get Location</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        let latitude = position.coords.latitude;
+                        let longitude = position.coords.longitude;
+
+                        document.getElementById("result").innerHTML =
+                            "Latitude: " + latitude +
+                            "<br>Longitude: " + longitude;
+
+                        console.log("Latitude:", latitude);
+                        console.log("Longitude:", longitude);
+                    },
+                    function(error) {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("Location access denied.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Location unavailable.");
+                                break;
+                            case error.TIMEOUT:
+                                alert("Location request timed out.");
+                                break;
+                            default:
+                                alert("Unknown error.");
+                        }
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script> --}}
 @endsection

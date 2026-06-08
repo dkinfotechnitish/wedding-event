@@ -127,41 +127,47 @@
 
         </div>
 
-        <div class="container pb-3">
-            <div class="section-heading d-flex align-items-center justify-content-between">
-                <h6>Gallery</h6>
-            </div>
+        <div class="container pb-3 my-2 mt-4">
 
-            <div class="collection-slide swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/17.jpg" alt="">
+            <div class="card py-3 px-2" style="border: 1px solid #dee2e6; background: #d6ba91;">
 
-                        </div>
-                    </div>
+                <div class="card-header border-0 bg-transparent d-flex align-items-center justify-content-between">
+                    <h6 class="mb-0">Gallery</h6>
+                </div>
+                <div class="card-body p-0 pb-3 pt-2 ">
 
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/19.jpg" alt="">
-                        </div>
-                    </div>
+                    <div class=" collection-slide swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/17.jpg" alt="">
 
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/21.jpg" alt="">
-                        </div>
-                    </div>
+                                </div>
+                            </div>
 
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/22.jpg" alt="">
-                        </div>
-                    </div>
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/19.jpg" alt="">
+                                </div>
+                            </div>
 
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/23.jpg" alt="">
-                        </div>
-                    </div>
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/21.jpg" alt="">
+                                </div>
+                            </div>
 
-                    <div class="swiper-slide">
-                        <div class="card collection-card"><img src="assets/img/product/24.jpg" alt="">
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/22.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/23.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="card collection-card"><img src="assets/img/product/24.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

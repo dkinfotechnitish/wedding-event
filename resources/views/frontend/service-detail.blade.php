@@ -2,17 +2,6 @@
 
 @section('content')
     <div class="page-content-wrapper">
-        {{-- @if ($service->image)
-            <div class="product-slide-wrapper">
-                <div class="product-slides swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide single-product-slide"
-                            style="background-image: url('{{ asset('storage/' . $service->image) }}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif --}}
 
         <div class="product-description pb-3">
             <div class="post-content bg-white py-3 mb-3">
@@ -36,26 +25,32 @@
         </div>
 
         @if ($service->is_gallary)
-            <div class="container pb-3">
-                <div class="section-heading d-flex align-items-center justify-content-between">
-                    <h6>Gallery</h6>
-                </div>
+            <div class="container pb-3 my-2 mt-4">
 
-                @if ($service->galleries->isNotEmpty())
-                    <div class="collection-slide swiper">
-                        <div class="swiper-wrapper">
-                            @foreach ($service->galleries as $item)
-                                <div class="swiper-slide">
-                                    <div class="card collection-card">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="Gallery Image">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+                <div class="card py-3 px-2" style="border: 1px solid #dee2e6; background: #d6ba91;">
+
+                    <div class="card-header border-0 bg-transparent d-flex align-items-center justify-content-between">
+                        <h6 class="mb-0">Gallery</h6>
                     </div>
-                @else
-                    <p class="text-muted">No gallery images available.</p>
-                @endif
+                    <div class="card-body p-0 pb-3 pt-2 ">
+
+                        @if ($service->galleries->isNotEmpty())
+                            <div class="collection-slide swiper">
+                                <div class="swiper-wrapper">
+                                    @foreach ($service->galleries as $item)
+                                        <div class="swiper-slide">
+                                            <div class="card collection-card">
+                                                <img src="{{ asset('storage/' . $item->image) }}" alt="Gallery Image">
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @else
+                            <p class="text-muted">No gallery images available.</p>
+                        @endif
+                    </div>
+                </div>
             </div>
         @endif
 
