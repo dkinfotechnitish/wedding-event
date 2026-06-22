@@ -32,150 +32,61 @@
 
     <div class="page-content-wrapper">
 
+        @php
+            $half = ceil($menus->count() / 2);
+
+            $firstMenus = $menus->take($half);
+            $secondMenus = $menus->skip($half);
+        @endphp
+
+        {{-- First Half Menus --}}
+        <div class="product-catagories-wrapper py-3">
+            <div class="container">
+                <div class="row g-2">
+                    @foreach ($firstMenus as $menu)
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card h-100 shadow-sm border-0">
+                                <a href="{{ route('menu.page', $menu->url) }}">
+                                    @if ($menu->image)
+                                        <img src="{{ asset($menu->image) }}" class="card-img-top"
+                                            alt="{{ $menu->title }}" style="height:200px;object-fit:cover;">
+                                    @endif
+
+                                    <div class="card-body text-center">
+                                        <h6 class="mb-2">{{ $menu->title }}</h6>
+
+                                        @if ($menu->desc)
+                                            <p class="small text-muted">
+                                                {{ Str::limit(strip_tags($menu->desc), 80) }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="hero-wrapper pt-3">
                 <div class="hero-slides swiper">
                     <div class="swiper-wrapper">
 
-                        <!-- Wedding Planning -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/12.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Make Your Dream Wedding Memorable
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Elegant décor, planning & unforgettable moments
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @forelse ($banners as $banner)
+                            <div class="swiper-slide single-hero-slide"
+                                style="background-image: url('{{ asset($banner->image) }}');">
 
-                        <!-- Bride & Groom -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/11.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Celebrate Love With Perfection
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Beautiful wedding setups for your special day
-                                    </p>
+                                <div class="slide-content h-100 d-flex align-items-center">
+                                    {!! $banner->banner_content ?? '-' !!}
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Decoration -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/10.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Premium Wedding Decoration
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Stylish stage, floral décor & lighting arrangements
-                                    </p>
-                                </div>
+                        @empty
+                            <div class="text-center">
+                                No Banner Found!
                             </div>
-                        </div>
-
-                        <!-- Catering -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/19.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Delicious Catering Services
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Tasteful menus for every wedding celebration
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Photography -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/20.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Capture Every Precious Moment
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Professional wedding photography & videography
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Venue -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/21.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Luxury Wedding Venue Setup
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Elegant arrangements for grand celebrations
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Mehendi / Haldi -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/26.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Mehendi & Haldi Event Planning
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        Traditional celebrations with creative decoration
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Full Wedding Package -->
-                        <div class="swiper-slide single-hero-slide"
-                            style="background-image: url('https://weddingeventwala.com/wp-content/uploads/2021/11/35.jpg')">
-                            <div class="slide-content h-100 d-flex align-items-center">
-                                <div class="slide-text">
-                                    <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms"
-                                        data-duration="1000ms">
-                                        Complete Wedding Management
-                                    </h4>
-                                    <p class="text-white" data-animation="fadeInUp" data-delay="400ms"
-                                        data-duration="1000ms">
-                                        From planning to execution — we manage everything
-                                    </p>
-                                    <a class="btn btn-primary" href="#contact" data-animation="fadeInUp"
-                                        data-delay="800ms" data-duration="1000ms">
-                                        Contact Us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
 
                     </div>
 
@@ -184,157 +95,36 @@
             </div>
         </div>
 
+        {{-- Remaining Half Menus --}}
         <div class="product-catagories-wrapper py-3">
             <div class="container">
                 <div class="row g-2">
+                    @foreach ($secondMenus as $menu)
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card h-100 shadow-sm border-0">
+                                <a href="{{ route('menu.page', $menu->url) }}">
+                                    @if ($menu->image)
+                                        <img src="{{ asset($menu->image) }}" class="card-img-top"
+                                            alt="{{ $menu->title }}" style="height:200px;object-fit:cover;">
+                                    @endif
 
-                    <!-- Engagement -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.engagement') }}">
-                                    <i class="ti ti-heart-handshake fs-1 mb-2 text-danger"></i>
-                                    <span>Engagement</span>
+                                    <div class="card-body text-center">
+                                        <h6 class="mb-2">{{ $menu->title }}</h6>
+
+                                        @if ($menu->desc)
+                                            <p class="small text-muted">
+                                                {{ Str::limit(strip_tags($menu->desc), 80) }}
+                                            </p>
+                                        @endif
+                                    </div>
                                 </a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Wedding -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.wedding') }}">
-                                    <i class="ti ti-heart fs-1 mb-2" style="color: #e83e8c;"></i>
-                                    <span>Wedding</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Reception -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.reception') }}">
-                                    <i class="ti ti-glass-full fs-1 mb-2 text-warning"></i>
-                                    <span>Reception</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Anniversary -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.anniversary') }}">
-                                    <i class="ti ti-cake fs-1 mb-2 text-success"></i>
-                                    <span>Anniversary</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Honeymoon -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.honeymoon') }}">
-                                    <i class="ti ti-plane fs-1 mb-2 text-info"></i>
-                                    <span>Honeymoon</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Birthday -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.birthday') }}">
-                                    <i class="ti ti-cake fs-1 mb-2 text-primary"></i>
-                                    <span>Birthday</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Venue -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.venue') }}">
-                                    <i class="ti ti-building-community fs-1 mb-2 text-secondary"></i>
-                                    <span>Venue</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Decorator -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.decorator') }}">
-                                    <i class="ti ti-flower fs-1 mb-2 text-success"></i>
-                                    <span>Decorator</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Catering -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.catering') }}">
-                                    <i class="ti ti-chef-hat fs-1 mb-2 text-danger"></i>
-                                    <span>Catering</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Photography -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.photography') }}">
-                                    <i class="ti ti-camera fs-1 mb-2 text-dark"></i>
-                                    <span>Photography</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Theme Entry -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.theme-entry') }}">
-                                    <i class="ti ti-sparkles fs-1 mb-2 text-warning"></i>
-                                    <span>Theme Entry</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Theme Entry -->
-                    <div class="col-3">
-                        <div class="card catagory-card">
-                            <div class="card-body px-2 text-center">
-                                <a href="{{ route('menu.theme-entry') }}">
-                                    <i class="ti ti-star fs-1 mb-2 text-primary"></i>
-                                    <span>Theme Entry</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
+
 
         @php
             $gradients = [

@@ -49,9 +49,13 @@
     <div class="header-area" id="headerArea">
         <div class="container h-100 d-flex align-items-center justify-content-between gap-2 d-flex">
             <!-- Logo Wrapper-->
-            <div class="logo-wrapper"><a href="{{ route('index') }}" class="text-dark"><img src="assets/img/logo.png"
-                        width="35%" alt=""></a>
+            <div class="logo-wrapper">
+                <a href="{{ route('index') }}" class="text-dark"><img src="assets/img/logo.png" width="35%"
+                        alt=""></a>
             </div>
+            <div class="container back-button "><a href="javascript:history.back()"><i class="ti ti-arrow-left"></i></a>
+            </div>
+
             <div class="navbar-logo-container d-flex align-items-center gap-2">
                 <!-- Cart Icon -->
                 {{-- <div class="cart-icon-wrap"><a href="#"><i class="ti ti-basket-bolt"></i><span>0</span></a>
@@ -135,6 +139,11 @@
                         <i class="ti ti-briefcase"></i>Career
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('package') }}">
+                        <i class="ti ti-wallet"></i>Package
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{ route('terms-conditions') }}">
@@ -172,7 +181,7 @@
             <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
                 <li><a href="{{ route('index') }}"><i class="ti ti-home"></i>HOME</a></li>
                 <li><a href="{{ route('about') }}"><i class="ti ti-user"></i>ABOUT</a></li>
-                <li><a href="{{ route('career') }}"><i class="ti ti-briefcase"></i>CAREER</a></li>
+                <li><a href="{{ route('package') }}"><i class="ti ti-wallet"></i>PACKAGE</a></li>
                 <li><a href="{{ route('faq') }}"><i class="ti ti-help"></i>FAQ's</a></li>
                 <li><a href="{{ route('contact') }}"><i class="ti ti-phone"></i>CONTACT</a></li>
             </ul>

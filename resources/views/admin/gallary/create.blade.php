@@ -43,12 +43,18 @@
                             <h5 class="card-title mb-0">Gallery Image Information</h5>
                         </div>
 
+                        <div class="alert alert-info mt-2">
+                            <i class="fas fa-info-circle"></i>
+                            Please select either a <strong>Service</strong> or a <strong>Menu</strong>. You may also select
+                            both if applicable.
+                        </div>
+
                         <div class="card-body d-flex flex-wrap">
                             <div class="mb-3 col-md-6">
                                 <label for="service_id" class="form-label">Service <span
                                         class="text-danger">*</span></label>
                                 <select id="service_id" name="service_id"
-                                    class="form-select @error('service_id') is-invalid @enderror" required>
+                                    class="form-select @error('service_id') is-invalid @enderror">
                                     <option value="">Select a service</option>
                                     @foreach ($services as $service)
                                         <option value="{{ $service->id }}"
@@ -58,6 +64,30 @@
                                     @endforeach
                                 </select>
                                 @error('service_id')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="menu_id" class="form-label">
+                                    Menu <span class="text-danger">*</span>
+                                </label>
+
+                                <select id="menu_id" name="menu_id"
+                                    class="form-select @error('menu_id') is-invalid @enderror">
+
+                                    <option value="">Select a menu</option>
+
+                                    @foreach ($menus as $menu)
+                                        <option value="{{ $menu->id }}"
+                                            {{ old('menu_id') == $menu->id ? 'selected' : '' }}>
+                                            {{ $menu->title }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+
+                                @error('menu_id')
                                     <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>

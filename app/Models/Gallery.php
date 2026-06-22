@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['service_id', 'position_img', 'image', 'is_hidden'])]
+#[Fillable(['service_id', 'position_img', 'menu_id', 'image', 'is_hidden'])]
 class Gallery extends Model
 {
     use HasFactory;
@@ -24,5 +24,10 @@ class Gallery extends Model
     public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
     }
 }

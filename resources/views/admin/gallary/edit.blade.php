@@ -64,6 +64,30 @@
                             </div>
 
                             <div class="mb-3 col-md-6">
+                                <label for="menu_id" class="form-label">
+                                    Menu
+                                </label>
+
+                                <select id="menu_id" name="menu_id"
+                                    class="form-select @error('menu_id') is-invalid @enderror">
+
+                                    <option value="">Select a menu</option>
+
+                                    @foreach ($menus as $menu)
+                                        <option value="{{ $menu->id }}"
+                                            {{ old('menu_id', $gallery->menu_id) == $menu->id ? 'selected' : '' }}>
+                                            {{ $menu->title }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+
+                                @error('menu_id')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3 col-md-6">
                                 <label for="position_img" class="form-label">Position</label>
                                 <input type="number" id="position_img" name="position_img"
                                     class="form-control @error('position_img') is-invalid @enderror"

@@ -71,7 +71,9 @@
             <div class="card mb-4 shadow-sm border-0">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">
-                        {{ $items->first()->service?->name ?? 'No Service' }}
+                        {{ $items->first()->service
+                            ? 'Service :: ' . $items->first()->service->name
+                            : 'Menu :: ' . ($items->first()->menu?->title ?? 'Uncategorized') }}
                     </h5>
 
                     <span class="badge bg-dark text-light">

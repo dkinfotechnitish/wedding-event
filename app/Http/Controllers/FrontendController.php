@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Location;
 use App\Models\LocationCategoryService;
+use App\Models\Menu;
 use App\Models\Service;
 
 class FrontendController extends Controller
@@ -25,7 +27,10 @@ class FrontendController extends Controller
                 return $category->services->isNotEmpty();
             });
 
-        return view('frontend.index', compact('categories'));
+        $banners = Banner::orderBy('position_img')->where('is_hidden', false)->get();
+        $menus = Menu::orderBy('position')->where('show_on_homepage', true)->get();
+        // return $menus;
+        return view('frontend.index', compact('categories', 'menus', 'banners'));
     }
 
     protected function calculateDistance($lat1, $lon1, $lat2, $lon2)
@@ -58,5 +63,12 @@ class FrontendController extends Controller
             ->firstOrFail();
 
         return view('frontend.service-detail', compact('service'));
+    }
+    public function menuPage($url)
+    {
+        $menu = Menu::where('url', $url)->firstOrFail();
+        // return $menu;
+
+        return view('frontend.menu-details', compact('menu'));
     }
 }

@@ -105,6 +105,26 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.menu.index') }}">
+                            <span class="nav-icon">
+                                <i class="fa fa-solid fa-bars" aria-hidden="true"></i>
+
+                            </span>
+                            <span class="nav-text"> Menu </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.banner.index') }}">
+                            <span class="nav-icon">
+                                <i class="fa fa-solid fa-image" aria-hidden="true"></i>
+
+                            </span>
+                            <span class="nav-text"> Banner </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.category.index') }}">
                             <span class="nav-icon">
                                 <i class="fa fa-solid fa-list fa-1x" aria-hidden="true"></i>
@@ -128,7 +148,7 @@
                             <span class="nav-icon">
                                 <i class="fa fa-solid fa-image fa-1x " aria-hidden="true"></i>
                             </span>
-                            <span class="nav-text"> Gallery </span>
+                            <span class="nav-text"> Service Galleries </span>
                         </a>
                     </li>
 
